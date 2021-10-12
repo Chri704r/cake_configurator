@@ -5,25 +5,24 @@
 /** generel **/
 
 .hide {
-	/* visibility: hidden; */
-	display: none;
+  display: none;
 }
 
 .avoid-clicks {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 #Shadow,
 #plate {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 #bottom_layer,
 #middle_layer,
 #top_layer,
 #border {
-	z-index: 1000;
-	cursor: pointer;
+  z-index: 1000;
+  cursor: pointer;
 }
 
 /** generel end **/
@@ -31,27 +30,29 @@
 /** page position **/
 
 main {
-	width: 100vw;
-	display: grid;
-	grid-template-columns: 1fr 1.5fr 1fr;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
 }
 
 #container_1 {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 #container_2 {
-	grid-column-start: 2;
-	grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
 }
 
 #container_3 {
-	grid-column-start: 3;
-	grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 /** page position end **/
@@ -59,40 +60,40 @@ main {
 /** container_1 **/
 
 .item_wrapper img {
-	border-radius: 50%;
-	border: solid 1px;
+  border-radius: 50%;
+  border: solid 1px;
 }
 
 #clip-candle {
-	width: 10vw;
-	height: 10vw;
-	object-fit: cover;
-	object-position: 100% 0;
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
+  object-position: 100% 0;
 }
 
 #clip-flower {
-	width: 10vw;
-	height: 10vw;
-	object-fit: cover;
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
 }
 
 #clip-sign {
-	width: 10vw;
-	height: 10vw;
-	object-fit: fill;
+  width: 10vw;
+  height: 10vw;
+  object-fit: fill;
 }
 
 #clip-topper {
-	width: 10vw;
-	height: 10vw;
-	object-fit: fill;
+  width: 10vw;
+  height: 10vw;
+  object-fit: fill;
 }
 
 .texture_wrapper img {
-	width: 10vw;
-	height: 10vw;
-	object-fit: fill;
-	border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  object-fit: fill;
+  border-radius: 50%;
 }
 
 /** container_1 end **/
@@ -100,8 +101,17 @@ main {
 /** container_2 **/
 
 #container_2 img {
-	width: 40vw;
-	position: absolute;
+  width: 42vw;
+  position: absolute;
+}
+
+#bday-sign {
+  width: 10px;
+  margin-top: 0;
+}
+
+#container_2 svg {
+  margin-top: 4vh;
 }
 
 /** container_2 end **/
@@ -109,16 +119,16 @@ main {
 /** container_3 **/
 
 #color_container {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #color_container div {
-	width: 6vw;
-	height: 6vw;
-	margin: 2px;
-	border-radius: 50%;
-	border: solid 1px;
+  width: 6vw;
+  height: 6vw;
+  margin: 2px;
+  border-radius: 50%;
+  border: solid 1px;
 }
 
 /** container_3 end **/
