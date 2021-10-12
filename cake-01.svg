@@ -1,9 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 900">
   <defs>
     <style>
-      .cls-1, .cls-5 {
-        fill: transparent;
-      }
 
       .cls-2, .cls-4 {
         isolation: isolate;
@@ -14,7 +11,7 @@
       }
 
       .cls-4 {
-        opacity: 0.2;
+        opacity: 0.5;
       }
 
       .cls-5 {
