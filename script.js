@@ -72,6 +72,16 @@ function init() {
 
 	//listen for click on feature options
 	document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+
+	//listen for click on save button
+	document.querySelector("#save_button_wrapper button").addEventListener("click", () => {
+		document.querySelector(".line").classList.add("saved");
+		document.querySelector(".circle").style.stroke = "#ed2f62";
+		document.querySelector("#save_text").classList.remove("hide");
+		document.querySelector("#save_text").classList.add("fadein");
+
+		//save cake with localStorage
+	});
 }
 
 function setColor(element, colorString) {
@@ -100,7 +110,8 @@ function toggleOption(event) {
 		// - un-hide the feature-layer(s) in the #product-preview;
 		document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.remove("hide");
 
-		// TODO: More code
+		//add feature to text list
+		addFeatureList(feature);
 	} else {
 		console.log(`Feature ${feature} is turned off!`);
 
@@ -109,5 +120,24 @@ function toggleOption(event) {
 
 		// - hide the feature-layer(s) in the #product-preview
 		document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.add("hide");
+
+		//remove from feature list
+		document.querySelector(`#feature_text .${feature}`).textContent = "";
 	}
+}
+
+function addFeatureList(feature) {
+	const p = document.createElement("p");
+	p.classList.add(`${feature}`);
+
+	if (feature === "wedding") {
+		p.textContent = `- wedding topper`;
+	} else if (feature === "birthday") {
+		p.textContent = `- birthday sign`;
+	} else if (feature.includes("texture")) {
+		p.textContent = `- cake texture`;
+	} else {
+		p.textContent = `- ${feature}`;
+	}
+	document.querySelector("#feature_text").append(p);
 }
