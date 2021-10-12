@@ -12,7 +12,8 @@
   pointer-events: none;
 }
 
-#shadow {
+#shadow,
+#plate {
   pointer-events: none;
 }
 
