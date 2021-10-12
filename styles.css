@@ -92,13 +92,13 @@ main {
 #clip-candle {
   width: 7vw;
   height: 7vw;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 #clip-flower {
   width: 7vw;
   height: 7vw;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 #clip-sign {
