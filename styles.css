@@ -1,10 +1,19 @@
+/** colors **/
+
+/** colors end **/
+
+/** generel **/
+
 .hide {
   visibility: hidden;
 }
 
+/** generel end **/
+
 /** page position **/
 
 main {
+  width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
 }
