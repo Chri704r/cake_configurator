@@ -90,33 +90,33 @@ main {
 }
 
 #clip-candle {
-  width: 10vw;
-  height: 10vw;
+  width: 7vw;
+  height: 7vw;
   object-fit: cover;
   object-position: 100% 0;
 }
 
 #clip-flower {
-  width: 10vw;
-  height: 10vw;
+  width: 7vw;
+  height: 7vw;
   object-fit: cover;
 }
 
 #clip-sign {
-  width: 10vw;
-  height: 10vw;
+  width: 7vw;
+  height: 7vw;
   object-fit: fill;
 }
 
 #clip-topper {
-  width: 10vw;
-  height: 10vw;
+  width: 7vw;
+  height: 7vw;
   object-fit: fill;
 }
 
 .texture_wrapper img {
-  width: 10vw;
-  height: 10vw;
+  width: 7vw;
+  height: 7vw;
   object-fit: fill;
   border-radius: 50%;
   border: solid 1px;
@@ -183,17 +183,94 @@ main {
   margin-top: 20px;
   margin-bottom: 10px;
   padding: 5px;
-  width: 25vw;
+  width: 24.3vw;
   border: solid 1px;
   border-color: var(--custom-gold);
 }
 
 #save_button_wrapper button {
-  height: 30px;
+  font-family: "Roboto Condensed", sans-serif;
+  height: 29px;
   width: 150px;
+  margin-right: 10px;
   border: solid 1px;
   border-color: var(--custom-gold);
   background-color: transparent;
 }
 
+#save_button_wrapper button:hover {
+  background-color: var(--custom-gold);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.circle,
+.line {
+  fill: none;
+  stroke: #b9b9b9;
+  stroke-miterlimit: 10;
+}
+
+.circle {
+  stroke-width: 1.5px;
+}
+
+.line {
+  stroke-linecap: round;
+  stroke-width: 2px;
+}
+
+#wrapper {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-items: center;
+}
+
+#save_text {
+  position: absolute;
+  top: 65px;
+  left: 170px;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: var(--custom-gold);
+}
+
+.hide {
+  opacity: 0;
+}
+
+/*-----ANIMATION------*/
+
+.saved {
+  animation: saved_kf 2s 1 forwards;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+@keyframes saved_kf {
+  0% {
+    stroke: var(--custom-gold);
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke: var(--custom-gold);
+  }
+}
+
+.fadein {
+  animation: fadein_kf 0.5s 1 forwards;
+}
+
+@keyframes fadein_kf {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /** container_3 end **/
