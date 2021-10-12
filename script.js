@@ -8,7 +8,7 @@ async function start() {
 	const cake = await response.text();
 
 	//add cake image to container
-	document.querySelector("#container_2").innerHTML = cake;
+	document.querySelector("#svg-container").innerHTML = cake;
 
 	init();
 }
