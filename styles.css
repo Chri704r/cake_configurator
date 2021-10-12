@@ -93,13 +93,12 @@ main {
   width: 7vw;
   height: 7vw;
   object-fit: cover;
-  object-position: 100% 0;
 }
 
 #clip-flower {
   width: 7vw;
   height: 7vw;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 #clip-sign {
