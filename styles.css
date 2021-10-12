@@ -33,3 +33,32 @@ main {
 }
 
 /** container_1 end **/
+/** page position **/
+
+main {
+  display: grid;
+  grid-template-columns: 1fr, 1.5fr, 1fr;
+}
+
+#container_1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#container_2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#container_3 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  display: flex;
+  flex-direction: row;
+}
+
+/** page position end **/
+
+/** container_1 **/
+
+/** container_1 end **/
