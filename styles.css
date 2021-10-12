@@ -8,6 +8,14 @@
   visibility: hidden;
 }
 
+.avoid-clicks {
+  pointer-events: none;
+}
+
+#shadow {
+  pointer-events: none;
+}
+
 /** generel end **/
 
 /** page position **/
