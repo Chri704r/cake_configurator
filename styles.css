@@ -11,11 +11,16 @@ p {
 :root {
   --custom-purple: #ebdff2;
   --custom-gold: #d4af37;
+  --custom-cream: #fdf5e6;
 }
 
 /** colors end **/
 
 /** generel **/
+
+body {
+  background-color: var(--custom-cream);
+}
 
 .hide {
   display: none;
@@ -123,19 +128,24 @@ main {
 /** container_2 **/
 
 #container_2 img {
-  width: 42vw;
+  width: 30vw;
   position: absolute;
   margin-top: 4vh;
 }
 
-#container_2 #bday-sign,
-#container_2 #topper {
-  width: 10vw;
+#container_2 #bday-sign {
+  width: 7.5vw;
   margin-top: -1vh;
+}
+
+#container_2 #topper {
+  width: 8vw;
+  margin-top: -2vh;
 }
 
 #container_2 svg {
   margin-top: 4vh;
+  width: 30vw;
 }
 
 /** container_2 end **/
