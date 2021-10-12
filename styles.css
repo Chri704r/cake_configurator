@@ -103,11 +103,12 @@ main {
 #container_2 img {
   width: 42vw;
   position: absolute;
+  margin-top: 4vh;
 }
 
-#bday-sign {
-  width: 10px;
-  margin-top: 0;
+#container_2 #bday-sign {
+  width: 10vw;
+  margin-top: -1vh;
 }
 
 #container_2 svg {
