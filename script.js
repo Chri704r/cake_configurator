@@ -14,6 +14,7 @@ async function start() {
 }
 
 function init() {
+	console.log("init");
 	//declare variables for all parts of the cake
 	const plate = document.querySelector("#plate");
 	const bottom_layer = document.querySelector("#bottom_layer");
@@ -25,11 +26,13 @@ function init() {
 
 	//add eventlistners to all parts of the cake
 	plate.addEventListener("click", (event) => {
+		console.log("plate clicked");
 		setColor(event.target, currentColor);
 	});
 
 	bottom_layer.addEventListener("click", (event) => {
 		setColor(event.target, currentColor);
+		console.log("bottom_layer clicked");
 	});
 
 	middle_layer.addEventListener("click", (event) => {
@@ -41,7 +44,8 @@ function init() {
 	});
 
 	border.addEventListener("click", (event) => {
-		setColor(event.target, currentColor);
+		console.log("border cliked");
+		setColor(document.querySelector("#border"), currentColor);
 	});
 
 	//listen to clicked color and set the current color value equal to selected color
