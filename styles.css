@@ -4,6 +4,11 @@ p {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2rem;
+}
+
 /** fonts end **/
 
 /** colors **/
@@ -11,7 +16,7 @@ p {
 :root {
   --custom-purple: #ebdff2;
   --custom-gold: #d4af37;
-  --custom-cream: #fdf5e6;
+  --custom-cream: #f1f0ea;
 }
 
 /** colors end **/
@@ -56,9 +61,6 @@ main {
 #container_1 {
   grid-column-start: 1;
   grid-column-end: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
 
 #container_2 {
@@ -84,6 +86,16 @@ main {
   width: 10vw;
 }
 
+#container_1 h2 {
+  margin-left: 4vw;
+}
+
+#feature_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .item_wrapper {
   display: flex;
   justify-content: center;
@@ -103,6 +115,7 @@ main {
   width: 10vw;
   height: 10vw;
   margin: auto;
+  cursor: pointer;
 }
 
 #clip-candle {
@@ -139,6 +152,7 @@ main {
 .texture_wrapper img:hover {
   width: 10vw;
   height: 10vw;
+  cursor: pointer;
 }
 
 /** container_1 end **/
