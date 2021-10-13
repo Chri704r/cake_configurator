@@ -126,14 +126,21 @@ function toggleOption(event) {
 
   //texture dependencie
   if (
-    features === "texture1" ||
+    feature === "texture1" ||
     feature === "texture2" ||
     feature === "texture3"
   ) {
     // set other textures to be false
-    features["texture1"] = false;
-    features["texture2"] = false;
-    features["texture3"] = false;
+    if (feature === "texture1") {
+      features["texture2"] = false;
+      features["texture3"] = false;
+    } else if (feature === "texture2") {
+      features["texture1"] = false;
+      features["texture3"] = false;
+    } else if (feature === "texture3") {
+      features["texture1"] = false;
+      features["texture2"] = false;
+    }
 
     // - no longer mark other features as chosen
     features["texture1"].classList = "";
