@@ -9,6 +9,14 @@ h2 {
   font-size: 2rem;
 }
 
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  width: 100vw;
+  margin-left: -20px;
+}
+
 /** fonts end **/
 
 /** colors **/
