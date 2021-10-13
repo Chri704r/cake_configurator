@@ -162,52 +162,58 @@ function toggleOption(event) {
 
     // - mark target as chosen (add class "chosen")
     target.classList.add("chosen");
-
-    removeHide();
-    // - un-hide the feature-layer(s) in the #product-preview; with a setTimeout
-    function removeHide() {
-      setTimeout(() => {
-        console.log("hide feature");
-
-        document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.remove("hide");
-      }, 900);
+    if (feature === "texture1" || feature === "texture2" || feature === "texture3") {
+      // - un-hide the feature-layer(s) in the #product-preview;
+      document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.remove("hide");
     }
-    // - create featureElement and append to #container_2
-    const cakeFeature = createFeatureElement(feature);
-    // const cakeFeature = document.querySelector(`.item_wrapper[data-feature="${feature}"]`);
+    if (feature === "candles" || feature === "flowers" || feature === "wedding" || feature === "birthday") {
+      removeHide();
+      // - un-hide the feature-layer(s) in the #product-preview; with a setTimeout
+      function removeHide() {
+        setTimeout(() => {
+          console.log("remove hide feature");
 
-    document.querySelector("#container_2").append(cakeFeature);
-    // FLIP animation
-
-    //get bounding client rect, we get the information of an element
-    const firstFrame = document.querySelector(`#container_1 .feature_container #item_features .item_wrapper[data-feature="${feature}"]`).getBoundingClientRect();
-    //console.log("firstframe", firstFrame);
-
-    let lastFrame = cakeFeature.getBoundingClientRect();
-    // console.log("lastFrame", lastFrame);
-
-    const deltaX = firstFrame.left - lastFrame.left;
-    const deltaY = firstFrame.top - lastFrame.top;
-
-    0;
-    let animation = cakeFeature.animate(
-      [
-        {
-          transformOrigin: "top left",
-          transform: `translate(${deltaX}px, ${deltaY}px)`,
-        },
-        { transformOrigin: "top left", transform: "none" },
-      ],
-
-      {
-        duration: 900,
-        easing: "ease-in-out",
+          document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.remove("hide");
+        }, 900);
       }
-    );
-    // - when animation is complete, remove featureElement from the DOM
-    animation.onfinish = function () {
-      cakeFeature.remove();
-    };
+      // - create featureElement and append to #container_2
+      const cakeFeature = createFeatureElement(feature);
+      // const cakeFeature = document.querySelector(`.item_wrapper[data-feature="${feature}"]`);
+
+      document.querySelector("#container_2").append(cakeFeature);
+      // FLIP animation
+
+      //get bounding client rect, we get the information of an element
+      const firstFrame = document.querySelector(`#container_1 .feature_container #item_features .item_wrapper[data-feature="${feature}"]`).getBoundingClientRect();
+      //console.log("firstframe", firstFrame);
+
+      let lastFrame = cakeFeature.getBoundingClientRect();
+      // console.log("lastFrame", lastFrame);
+
+      const deltaX = firstFrame.left - lastFrame.left;
+      const deltaY = firstFrame.top - lastFrame.top;
+
+      0;
+      let animation = cakeFeature.animate(
+        [
+          {
+            transformOrigin: "top left",
+            transform: `translate(${deltaX}px, ${deltaY}px)`,
+          },
+          { transformOrigin: "top left", transform: "none" },
+        ],
+
+        {
+          duration: 900,
+          easing: "ease-in-out",
+        }
+      );
+      // - when animation is complete, remove featureElement from the DOM
+      animation.onfinish = function () {
+        cakeFeature.remove();
+      };
+    }
+
     //add feature to text list
     addFeatureList(feature);
   } else {
@@ -219,30 +225,36 @@ function toggleOption(event) {
     //remove from feature list
     document.querySelector(`#feature_text .${feature}`).remove();
 
-    // - find the existing featureElement on the cake
-    const exFeatureElement = document.querySelector(`#container_2 [data-feature="${feature}"]`);
+    if (feature === "candles" || feature === "flowers" || feature === "wedding" || feature === "birthday") {
+      // - find the existing featureElement on the cake
+      const exFeatureElement = document.querySelector(`#container_2 [data-feature="${feature}"]`);
 
-    let animationHide = exFeatureElement.animate(
-      [
+      let animationHide = exFeatureElement.animate(
+        [
+          {
+            transformOrigin: "top left",
+            opacity: "1",
+          },
+          {
+            transformOrigin: "top left",
+            opacity: "0",
+          },
+        ],
         {
-          transformOrigin: "top left",
-          opacity: "1",
-        },
-        {
-          transformOrigin: "top left",
-          opacity: "0",
-        },
-      ],
-      {
-        duration: 600,
-        easing: "ease-in-out",
-      }
-    );
-    // - when animation is complete, add the class hide back
-    animationHide.onfinish = function () {
-      console.log("hide cake feature");
+          duration: 600,
+          easing: "ease-in-out",
+        }
+      );
+      // - when animation is complete, add the class hide back
+      animationHide.onfinish = function () {
+        console.log("hide cake feature");
+        document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.add("hide");
+      };
+    }
+    if (feature === "texture1" || feature === "texture2" || feature === "texture3") {
+      //adds the class hide back
       document.querySelector(`#container_2 [data-feature="${feature}"]`).classList.add("hide");
-    };
+    }
   }
 }
 
@@ -264,8 +276,8 @@ function addFeatureList(feature) {
 //the animation element that flies on to the cake
 function createFeatureElement(feature) {
   const img = document.createElement("img");
-  img.style.width = "11vw";
-  img.style.height = "11vh";
+  img.style.width = "95px";
+  img.style.height = "105px";
   if (feature == "candles") {
     console.log("candless");
     img.src = "img/candles-small.png";
