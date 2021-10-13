@@ -23,7 +23,6 @@ async function start() {
 
   const container2 = document.querySelector("#container_2");
   const cakeInDom = document.querySelector("#container_2 svg");
-  console.log("cakeInDom", cakeInDom);
 
   container2.insertBefore(cakeInDom, container2.childNodes[0]);
 
@@ -165,9 +164,18 @@ function toggleOption(event) {
       .classList.add("hide");
 
     //remove from feature list
-    // document.querySelector(`#feature_text .texture1`).textContent = "";
-    // document.querySelector(`#feature_text .texture2`).textContent = "";
-    // document.querySelector(`#feature_text .texture3`).textContent = "";
+    const text1 = document.querySelector(`#feature_text .texture1`);
+    const text2 = document.querySelector(`#feature_text .texture2`);
+    const text3 = document.querySelector(`#feature_text .texture3`);
+    if (text1) {
+      text1.remove();
+    }
+    if (text2) {
+      text2.remove();
+    }
+    if (text3) {
+      text3.remove();
+    }
   }
 
   //Toggle feature in "model"
@@ -202,7 +210,7 @@ function toggleOption(event) {
       .classList.add("hide");
 
     //remove from feature list
-    document.querySelector(`#feature_text .${feature}`).textContent = "";
+    document.querySelector(`#feature_text .${feature}`).remove();
   }
 }
 
