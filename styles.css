@@ -189,6 +189,22 @@ main {
   position: absolute;
 }
 
+#bottom_layer:hover,
+#middle_layer:hover,
+#top_layer:hover,
+#border:hover {
+  stroke: var(--custom-gold);
+  stroke-width: 2px;
+  stroke-dasharray: 10;
+  animation: dash 5s linear;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 500;
+  }
+}
+
 /** container_2 end **/
 
 /** container_3 **/
