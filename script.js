@@ -21,6 +21,12 @@ async function start() {
   //add cake image to container
   document.querySelector("#container_2").innerHTML += cake;
 
+  const container2 = document.querySelector("#container_2");
+  const cakeInDom = document.querySelector("#container_2 svg");
+  console.log("cakeInDom", cakeInDom);
+
+  container2.insertBefore(cakeInDom, container2.childNodes[0]);
+
   init();
 }
 

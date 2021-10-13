@@ -178,6 +178,7 @@ main {
 #container_2 svg {
   margin-top: 4vh;
   width: 30vw;
+  position: absolute;
 }
 
 /** container_2 end **/
