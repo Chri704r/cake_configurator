@@ -39,6 +39,8 @@ function init() {
 
 	let currentColor = "white";
 
+	document.querySelector("input[type=color]").value = "#CEBBBB";
+
 	bottom_layer.style.fill = currentColor;
 	middle_layer.style.fill = currentColor;
 	top_layer.style.fill = currentColor;
