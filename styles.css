@@ -274,6 +274,9 @@ main {
 	border-color: var(--custom-gold);
 	background-color: transparent;
 }
+#saved_icon {
+	width: 40px;
+}
 
 #save_button_wrapper button:hover {
 	background-color: var(--custom-gold);
@@ -307,9 +310,6 @@ main {
 }
 
 #save_text {
-	position: absolute;
-	top: 65px;
-	left: 170px;
 	font-size: 12px;
 	font-family: sans-serif;
 	color: var(--custom-gold);
