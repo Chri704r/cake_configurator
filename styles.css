@@ -229,9 +229,9 @@ main {
 }
 
 .chosen {
-  border: solid 3px;
-  border-radius: 50%;
-  border-color: var(--custom-gold);
+  border: solid 3px !important;
+  border-radius: 50% !important;
+  border-color: var(--custom-gold) !important;
 }
 
 #container_3 input {
