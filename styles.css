@@ -228,6 +228,12 @@ main {
   cursor: pointer;
 }
 
+.chosen {
+  border: solid 3px;
+  border-radius: 50%;
+  border-color: var(--custom-gold);
+}
+
 #container_3 input {
   width: 25vw;
   border: solid 1px;
