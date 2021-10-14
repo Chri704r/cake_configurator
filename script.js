@@ -67,6 +67,14 @@ function init() {
   document.querySelectorAll(".color").forEach((color) => {
     color.addEventListener("click", (event) => {
       currentColor = event.target.style.backgroundColor;
+
+      const prevChocen = document.querySelector("#color_container .chosen");
+
+      if (prevChocen) {
+        prevChocen.classList.remove("chosen");
+      }
+
+      event.target.classList.add("chosen");
     });
   });
 
@@ -255,8 +263,14 @@ function init() {
   ishidden.forEach((item) => {
     if (!item.classList.contains("hide")) {
       const setTrue = item.dataset.feature;
+      console.log("setTrue", setTrue);
+      const setChosen = document.querySelector(
+        `#container_1 [data-feature=${setTrue}`
+      );
+      const setChosenImg = setChosen.querySelector("img");
 
       features[setTrue] = true;
+      setChosenImg.classList.add("chosen");
 
       addFeatureList(setTrue);
     }
