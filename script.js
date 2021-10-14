@@ -15,6 +15,7 @@ const features = {
 
 async function start() {
 	console.log("ready");
+
 	const response = await fetch("cake-01.svg");
 	const cake = await response.text();
 
@@ -81,6 +82,9 @@ function init() {
 		document.querySelector(".circle").style.stroke = "#d4af37";
 		document.querySelector("#save_text").classList.remove("hide");
 		document.querySelector("#save_text").classList.add("fadein");
+
+		//clear storige
+		localStorage.clear();
 
 		//save cake with localStorage
 		localStorage.setItem("bottom", document.querySelector("#bottom_layer .cls-5").style.fill);
@@ -171,6 +175,18 @@ function init() {
 	if (localStorage.wedding == "hide") {
 		document.querySelector(`#container_2 [data-feature="wedding"]`).classList.remove(localStorage.wedding);
 	}
+
+	const ishidden = document.querySelectorAll(`#container_2 [data-feature]`);
+
+	ishidden.forEach((item) => {
+		if (!item.classList.contains("hide")) {
+			const setTrue = item.dataset.feature;
+
+			features[setTrue] = true;
+
+			addFeatureList(setTrue);
+		}
+	});
 }
 
 function setColor(element, colorString) {
